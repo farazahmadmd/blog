@@ -1,0 +1,26 @@
+.nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 80px;
+    background-color: $light-c;
+
+    .nav-top{
+        width: 100%;
+        height: 100%;
+        @include Flex();
+        flex-flow: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-item{
+            color: $prim-c;
+            margin: 0 1rem;
+            &:hover{
+                font-weight: bolder;
+            }
+        }
+    }
+}

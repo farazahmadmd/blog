@@ -1,0 +1,28 @@
+.main_section{
+    img{
+        max-height: 300px;
+        width: 100%;
+    }
+    margin-top: 100px;
+    width: 100%;
+    @include Flex(row);
+    flex-wrap: wrap;
+    .section{
+        width: 100%;
+        @include Flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .card{
+            width: 230px;
+            margin-bottom: 2rem;
+            .text-lg{
+                margin: 1rem 0;
+            }
+            &:hover{
+                cursor: pointer;
+                color: $light-c;
+                background: linear-gradient($YouTube, $Twitter);
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Comforter+Brush&family=Dancing+Script&family=Estonia&family=Irish+Grover&family=Lato:wght@100&family=Lobster&family=Satisfy&family=Zilla+Slab:wght@300&display=swap');
+
+body{
+    font-family:'Baloo Tamma 2';
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+//variables
+//colors
+$prim-c:#111;
+$sec-c:#333;
+$light-c:#fff;
+$Facebook:#395599;
+$Instagram:#c32f82;
+$Twitter:#1c9deb;
+$Printerest:#d73532;
+$LinkedIn:#4064ad;
+$YouTube:#f80000;
+
+//Responsive Variables
+$iPad-Pro:1024px;
+$iPad:768px;
+$iPhone-X:375px;
+
+//Font Variables
+$base-font-size:16px;
+$sm_font-size:$base-font-size * 0.8;
+$lg_font-size:$base-font-size * 1.4;
+$xl_font-size:$base-font-size * 1.8;
+
+// Maps
+$Font-size: (
+    "sm":$sm_font-size,
+    "lg":$lg_font-size,
+    "xl":$xl_font-size,
+);
+@each $size_name, $size_value in $Font_size {
+    .text {
+        &-#{$size_name}{
+            font-size: $size_value;
+        }
+    }
+}
+$Text-positioning: (
+    "center":center,
+    "right":right,
+);
+@each $position_name, $position_value in $Text-positioning {
+    .#{$position_name} {
+        text-align: $position_value;
+    }
+}
+
+//Mixin's
+
+//Flex
+@mixin Flex ($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+//Responsive
+@mixin Responsive($display) {
+    @media(max-width: $display){
+        @content;
+    }
+}

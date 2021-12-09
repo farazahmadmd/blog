@@ -1,0 +1,158 @@
+@include Responsive($iPad-Pro){
+    .main_section{
+        @include Flex(column);
+        .section{
+            justify-content: space-evenly;
+
+            .card{
+                width: 300px;
+                margin-bottom: 2rem;
+            }
+
+            img{
+                max-height: 400px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include Responsive($iPad){
+    .main_section{
+        @include Flex();
+        .section{
+            .card{
+                .text-lg{
+                    font-size: $xl_font-size;
+                }
+                p{
+                    font-size: $lg_font-size;
+                }
+            }
+        }
+    }
+
+    .section-footer{
+        @include Flex(column);
+        justify-content: space-around;
+        align-items: center;
+
+        .footer{
+            width: 100%;
+        }
+
+        .footer_1{
+            align-items: center;
+            padding: 0.5rem 2rem;
+            order: 3;
+
+            .footer_contact{
+                @include Flex();
+                i{
+                    padding: 1rem;
+                }
+            }
+        }
+
+        .footer_2{
+            &-contact{
+                @include Flex();
+                li{
+                    padding: 2rem;
+                }
+            }
+
+            .inner-content{
+                h6,
+                p{
+                    font-size: $lg_font-size;
+                }
+                margin: 0 2rem;
+            }
+        }
+
+        .footer_3{
+            padding: 2rem;
+            .tags{
+                span{
+                    padding: 0.5rem 2rem;
+                }
+            }
+        }
+    }
+}
+
+@include Responsive($iPhone-X){
+    .nav{
+        li{
+            &:first-child,
+            &:nth-child(3){
+                .nav-item{
+                    font-size: $base-font-size;
+                }
+            }
+
+            &:nth-child(2){
+                .nav-item{
+                    font-size: $lg_font-size;
+                }
+            }
+        }
+    }
+
+    .main_section{
+        .section{
+            justify-content: space-evenly;
+
+            .card{
+                width: 300px;
+                margin-bottom: 4rem;
+            }
+            img{
+
+                max-height: 700px;
+            }
+        }
+    }
+
+    .about-section{
+        img{
+            height: 230px;
+            max-width: 300px;
+        }
+        p{
+            margin: 2rem;
+        }
+    }
+
+    .section-footer{
+        @include Flex(column);
+        justify-content: space-around;
+        align-items: center;
+
+        .footer_1{
+            @include Flex(column);
+            padding: 1rem 2rem;
+            .footer_content{
+                @include Flex(column)
+            }
+        }
+
+        .footer_2{
+            &-contact{
+                @include Flex(column);
+                    li{
+                        @include Flex();
+                        padding: 1.5rem;
+                        .inner-content{
+                            padding: 0.5rem;
+                            h6,
+                            p{
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
